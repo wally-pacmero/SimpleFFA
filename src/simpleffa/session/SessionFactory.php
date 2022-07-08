@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace simpleffa\session;
 
 use pocketmine\player\Player;
+use pocketmine\utils\SingletonTrait;
 
 class SessionFactory {
+    use SingletonTrait;
 
     /** @var Session[] */
     static private array $sessions = [];
