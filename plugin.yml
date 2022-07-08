@@ -1,0 +1,6 @@
+name: SimpleFFA
+version: 1.0
+author: WallyPacmero
+main: simpleffa\Loader
+api: 4.0.0
+description: a simple ffa open source for pocketmine-mp servers
