@@ -5,6 +5,7 @@ namespace simpleffa;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use simpleffa\session\SessionFactory;
+use pocketmine\utils\SingletonTrait;
 
 class Loader extends PluginBase {
  use SingletonTrait;
