@@ -5,6 +5,7 @@ namespace simpleffa;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use simpleffa\session\SessionFactory;
+use simpleffa\listener\SessionListener;
 use pocketmine\utils\SingletonTrait;
 
 class Loader extends PluginBase {
@@ -15,7 +16,7 @@ class Loader extends PluginBase {
     }
 
  public function onEnable(): void {
-        $this->registerListener(new FFAListener());
+        $this->registerListener(new SessionListener());
         foreach(SessionFactory::getInstance()->getSessions() as $session) {
         $session->changeScoreboard();
         }
