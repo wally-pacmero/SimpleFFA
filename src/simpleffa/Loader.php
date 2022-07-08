@@ -17,6 +17,7 @@ class Loader extends PluginBase {
         $this->registerListener(new FFAListener());
         foreach(SessionFactory::getInstance()->getSessions() as $session) {
         $session->changeScoreboard();
+        }
     }
  private function registerListener(Listener $listener): void {
         $this->getServer()->getPluginManager()->registerEvents($listener, $this);
