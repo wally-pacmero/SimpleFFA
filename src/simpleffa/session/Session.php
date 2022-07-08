@@ -20,11 +20,11 @@ class Session {
     private Player $player;
 
   /** @var Scoreboard|null **/
-  private ?Scoreboard $scoreboard;
+  private Scoreboard $scoreboard;
 
     public function __construct(Player $player) {
   $this->player = $player;
-  $this->setScoreboard(new FFAScoreboard($player));
+  $this->scoreboard = Scoreboard::create($player, "SimpleFFA");
 $player->setNameTag(TextFormat::AQUA . $player->getName());       
             }
         
@@ -48,8 +48,7 @@ public function getScoreboard(): Scoreboard
       return;
     }
     $this->scoreboard = $scoreboard;
-    $scoreboard->show();
-    $scoreboard->showLines();
+    $scoreboard->spawn();
   }
   
   public function changeScoreboard(): void
