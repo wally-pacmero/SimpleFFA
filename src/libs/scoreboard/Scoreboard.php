@@ -112,13 +112,12 @@ class Scoreboard
   
   public function removeLine(int $id = 0): void
   {
-    $line = $this->lines[$id];
-    if (isset($line)) {
+    if (isset($this->lines[$id])) {
       $pk = new SetScorePacket();
       $pk->type = SetScorePacket::TYPE_REMOVE; 
-      $pk->entries[] = $line;
+      $pk->entries[] = $this->lines[$id];
       $this->getPlayer()->getNetworkSession()->sendDataPacket($pk);
-      unset($line);
+      unset($this->lines[$id]);
     }
   }
   
