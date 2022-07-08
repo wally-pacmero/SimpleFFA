@@ -86,11 +86,11 @@ public function onBlockDamage(EntityDamageByBlockEvent $event)
         $entity = $event->getEntity();
         if ($entity instanceof Player) {
             $player = $entity;
-            if ($event->getCause() instanceof Fire) {
+            if ($event->getCause() === EntityDamageByBlockEvent::CAUSE_FIRE) {
                 $player->extinguish();
                 $event->cancel();
             }
-            if ($event->getCause() instanceof Lava) {
+            if ($event->getCause() === EntityDamageByBlockEvent::CAUSE_LAVA) {
                 $player->extinguish();
                 $event->cancel();
             }
