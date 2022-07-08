@@ -2,6 +2,7 @@
 
 namespace libs\scoreboard\type;
 
+use pocketmine\utils\TextFormat;
 use pocketmine\Server;
 use pocketmine\player\Player;
 
