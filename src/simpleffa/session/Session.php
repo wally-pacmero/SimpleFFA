@@ -19,7 +19,7 @@ class Session {
 
     private Player $player;
 
-  /** @var Scoreboard|null **/
+  /** @var Scoreboard **/
   private Scoreboard $scoreboard;
 
     public function __construct(Player $player) {
@@ -49,6 +49,7 @@ public function getScoreboard(): Scoreboard
     }
     $this->scoreboard = $scoreboard;
     $scoreboard->spawn();
+    //$scoreboard->setAllLine([]);
   }
   
   public function changeScoreboard(): void
