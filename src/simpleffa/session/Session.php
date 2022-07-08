@@ -24,7 +24,7 @@ class Session {
 
     public function __construct(Player $player) {
   $this->player = $player;
-$this->scoreboard = new FFAScoreboard($player);
+  $this->setScoreboard(new FFAScoreboard($player));
 $player->setNameTag(TextFormat::AQUA . $player->getName());       
             }
         
