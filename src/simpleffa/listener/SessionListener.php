@@ -10,30 +10,22 @@ declare(strict_types=1);
 
 namespace simpleffa\listener;
 
-use pocketmine\player\Player;
+use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerLoginEvent;
+use pocketmine\event\player\PlayerQuitEvent;
+use simpleffa\session\SessionFactory;
 
-class SessionFactory {
+class SessionListener implements Listener {
 
-    /** @var Session[] */
-    static private array $sessions = [];
+    public function onLogin(PlayerLoginEvent $event): void {
+        SessionFactory::createSession($event->getPlayer());
+    }
 
     /**
-     * @return Session[]
+     * @priority HIGHEST
      */
-    static public function getSessions(): array {
-        return self::$sessions;
-    }
-
-    static public function getSession(Player $player): ?Session {
-        return self::$sessions[$player->getName()] ?? null;
-    }
-
-    static public function createSession(Player $player): void {
-        self::$sessions[$player->getName()] = new Session($player);
-    }
-
-    static public function removeSession(Player $player): void {
-        unset(self::$sessions[$player->getName()]);
+    public function onQuit(PlayerQuitEvent $event): void {
+        SessionFactory::removeSession($event->getPlayer());
     }
 
 }
