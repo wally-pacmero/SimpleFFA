@@ -13,6 +13,7 @@ namespace simpleffa\session;
 use pocketmine\player\Player;
 use libs\scoreboard\type\FFAScoreboard;
 use libs\scoreboard\Scoreboard;
+use pocketmine\utils\TextFormat;
 
 class Session {
 
