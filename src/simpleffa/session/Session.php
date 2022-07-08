@@ -51,7 +51,7 @@ public function getScoreboard(): Scoreboard
     }
     $this->scoreboard = $scoreboard;
     $scoreboard->spawn();
-    $scoreboard->setAllLine(["line", " §fPing: " . $this->getPlayer()->getNetworkSession()->getPing(), " §fKillstreak: " . $this->getKillstreak(), §7line"]);
+    $scoreboard->setAllLine(["line", " §fPing: " . $this->getPlayer()->getNetworkSession()->getPing(), " §fKillstreak: " . $this->getKillstreak(), "§7line"]);
   }
   
   public function changeScoreboard(): void
