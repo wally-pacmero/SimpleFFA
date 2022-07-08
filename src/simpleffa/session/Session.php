@@ -53,10 +53,6 @@ public function getScoreboard(): Scoreboard
   
   public function changeScoreboard(): void
   {
-    if ($this->getSetting("score") === false) {
-      $this->getScoreboard()->remove();
-      return;
-    }
     $this->setScoreboard($this->scoreboard);
   }
 
