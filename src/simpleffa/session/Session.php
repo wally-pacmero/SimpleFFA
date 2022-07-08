@@ -49,7 +49,7 @@ public function getScoreboard(): Scoreboard
     }
     $this->scoreboard = $scoreboard;
     $scoreboard->spawn();
-    //$scoreboard->setAllLine([]);
+    $scoreboard->setAllLine(["line", " §fPing: " . $this->getPlayer()->getNetworkSession()->getPing(), "§7line"]);
   }
   
   public function changeScoreboard(): void
